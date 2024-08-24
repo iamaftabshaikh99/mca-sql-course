@@ -1,28 +1,35 @@
+
 # Creating and Managing Databases
 
 ## Creating a Database
-Before creating tables, you need to have a database where these tables will reside. A database is a collection of related data that is organized for easy access, management, and updating.
+Before creating tables, you need to have a database where these tables will reside. A database is a collection of related data organized for easy access, management, and updating.
 
-To create a new database, use the `CREATE DATABASE` statement. Here is the syntax:
+To create a new database, use the following `CREATE DATABASE` statement:
 
 ```sql
 CREATE DATABASE database_name;
 ```
 
-## Example: Creating a New Database
+### Example: Creating a New Database
+
 ```sql
 CREATE DATABASE school;
 ```
-Explanation: This command creates a new database named school.
 
+**Explanation**: This command creates a new database named `school`.
+
+---
 
 ## Listing Existing Databases
-Once you've created a database, you may want to see a list of all existing databases on your server. You can do this using the `SHOW DATABASES` statement:
+To see a list of all existing databases on your server, you can use the `SHOW DATABASES` statement:
 
 ```sql
 SHOW DATABASES;
 ```
-Explanation: This command lists all databases that are currently available on your server.
+
+**Explanation**: This command lists all databases currently available on your server.
+
+---
 
 ## Selecting a Database
 Before creating tables, you need to select the database where the tables will be created. You can select a database using the `USE` command:
@@ -30,25 +37,29 @@ Before creating tables, you need to select the database where the tables will be
 ```sql
 USE school;
 ```
-Explanation: This command selects the school database, making it the active database for all subsequent operations.
 
-## Displaying the Selected Database
+**Explanation**: This command selects the `school` database, making it the active database for all subsequent operations.
+
+---
+
+### Displaying the Selected Database
 To confirm that you are working in the correct database, you can use the `SELECT DATABASE();` command:
+
 ```sql
 SELECT DATABASE();
 ```
-Explanation: This command returns the name of the currently selected database.
 
+**Explanation**: This command returns the name of the currently selected database.
 
+---
 
-## Creating Tables in SQL
+# Creating Tables in SQL
 
 ## What is a Table?
-A table is a collection of related data entries that consists of rows and columns. Each row represents a record, and each column represents an attribute of the data.
-
+A table is a collection of related data entries consisting of rows and columns. Each row represents a record, and each column represents an attribute of the data.
 
 ## Creating a Table
-To create a table, use the `CREATE TABLE` statement. Here is the basic syntax:
+To create a table within a selected database, use the `CREATE TABLE` statement. Here is the basic syntax:
 
 ```sql
 CREATE TABLE table_name (
@@ -58,8 +69,10 @@ CREATE TABLE table_name (
 );
 ```
 
+---
+
 ### Example: Creating a Students Table
-Let's create a simple `students` table:
+Let's create a simple `students` table within the `school` database:
 
 ```sql
 CREATE TABLE students (
@@ -69,17 +82,20 @@ CREATE TABLE students (
     enrollment_date DATE
 );
 ```
-**Explanation**: The `students` table contains information about students, where `student_id` uniquely identifies each student, `first_name` and `last_name` store the student's names, and `enrollment_date` records the date they enrolled.
 
-**Expected Output**:
+**Explanation**: The `students` table contains information about students. The `student_id` uniquely identifies each student, `first_name` and `last_name` store the student's names, and `enrollment_date` records the date they enrolled.
+
+#### **Expected Output**
 After running `DESCRIBE students;` or `SHOW COLUMNS FROM students;`, you should see:
 
 | Field           | Type        | Null | Key | Default | Extra          |
 |-----------------|-------------|------|-----|---------|----------------|
-| student_id      | INT         | NO   | PRI | NULL    |                |
-| first_name      | VARCHAR(50) | YES  |     | NULL    |                |
-| last_name       | VARCHAR(50) | YES  |     | NULL    |                |
-| enrollment_date | DATE        | YES  |     | NULL    |                |
+| **student_id**  | INT         | NO   | PRI | NULL    | auto_increment |
+| **first_name**  | VARCHAR(50) | YES  |     | NULL    |                |
+| **last_name**   | VARCHAR(50) | YES  |     | NULL    |                |
+| **enrollment_date** | DATE    | YES  |     | NULL    |                |
+
+---
 
 ### Example: Creating a Courses Table
 Next, let's create a `courses` table:
@@ -93,13 +109,15 @@ CREATE TABLE courses (
 
 **Explanation**: The `courses` table contains details about different courses. The `course_id` uniquely identifies each course, and `course_name` stores the name of the course.
 
-**Expected Output**:
+#### **Expected Output**
 After running `DESCRIBE courses;` or `SHOW COLUMNS FROM courses;`, you should see:
 
 | Field       | Type         | Null | Key | Default | Extra          |
 |-------------|--------------|------|-----|---------|----------------|
-| course_id   | INT          | NO   | PRI | NULL    | auto_increment |
-| course_name | VARCHAR(100) | YES  |     | NULL    |                |
+| **course_id** | INT        | NO   | PRI | NULL    | auto_increment |
+| **course_name** | VARCHAR(100) | YES |  | NULL    |                |
+
+---
 
 ### Example: Creating an Enrollments Table
 Finally, let's create an `enrollments` table:
@@ -117,15 +135,17 @@ CREATE TABLE enrollments (
 
 **Explanation**: The `enrollments` table tracks which students are enrolled in which courses. It includes `student_id` and `course_id` as foreign keys that reference the `students` and `courses` tables, respectively, establishing a relationship between the tables.
 
-**Expected Output**:
+#### **Expected Output**
 After running `DESCRIBE enrollments;` or `SHOW COLUMNS FROM enrollments;`, you should see:
 
 | Field           | Type | Null | Key | Default | Extra          |
 |-----------------|------|------|-----|---------|----------------|
-| enrollment_id   | INT  | NO   | PRI | NULL    | auto_increment |
-| student_id      | INT  | YES  | MUL | NULL    |                |
-| course_id       | INT  | YES  | MUL | NULL    |                |
-| enrollment_date | DATE | YES  |     | NULL    |                |
+| **enrollment_id** | INT | NO   | PRI | NULL    | auto_increment |
+| **student_id**  | INT  | YES  | MUL | NULL    |                |
+| **course_id**   | INT  | YES  | MUL | NULL    |                |
+| **enrollment_date** | DATE | YES | | NULL    |                |
+
+---
 
 ## Practice
 Refer to the `examples/` directory for SQL scripts to create these tables and populate them with data.
@@ -170,4 +190,6 @@ CREATE TABLE enrollments (
 ---
 
 Continue to the next lesson: **[Inserting Data into Tables](../03_Inserting_Data/inserting_data.md)**.
-```
+
+
+
