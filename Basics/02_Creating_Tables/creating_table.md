@@ -69,8 +69,17 @@ CREATE TABLE students (
     enrollment_date DATE
 );
 ```
-
 **Explanation**: The `students` table contains information about students, where `student_id` uniquely identifies each student, `first_name` and `last_name` store the student's names, and `enrollment_date` records the date they enrolled.
+
+**Expected Output**:
+After running `DESCRIBE students;` or `SHOW COLUMNS FROM students;`, you should see:
+
+| Field           | Type        | Null | Key | Default | Extra          |
+|-----------------|-------------|------|-----|---------|----------------|
+| student_id      | INT         | NO   | PRI | NULL    |                |
+| first_name      | VARCHAR(50) | YES  |     | NULL    |                |
+| last_name       | VARCHAR(50) | YES  |     | NULL    |                |
+| enrollment_date | DATE        | YES  |     | NULL    |                |
 
 ### Example: Creating a Courses Table
 Next, let's create a `courses` table:
