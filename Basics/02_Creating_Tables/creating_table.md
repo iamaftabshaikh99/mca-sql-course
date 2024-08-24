@@ -9,14 +9,14 @@ To create a new database, use the `CREATE DATABASE` statement. Here is the synta
 CREATE DATABASE database_name;
 ```
 
-# Example: Creating a New Database
+## Example: Creating a New Database
 ```sql
 CREATE DATABASE school;
 ```
 Explanation: This command creates a new database named school.
 
 
-# Listing Existing Databases
+## Listing Existing Databases
 Once you've created a database, you may want to see a list of all existing databases on your server. You can do this using the `SHOW DATABASES` statement:
 
 ```sql
@@ -24,7 +24,7 @@ SHOW DATABASES;
 ```
 Explanation: This command lists all databases that are currently available on your server.
 
-# Selecting a Database
+## Selecting a Database
 Before creating tables, you need to select the database where the tables will be created. You can select a database using the `USE` command:
 
 ```sql
@@ -32,7 +32,7 @@ USE school;
 ```
 Explanation: This command selects the school database, making it the active database for all subsequent operations.
 
-# Displaying the Selected Database
+## Displaying the Selected Database
 To confirm that you are working in the correct database, you can use the `SELECT DATABASE();` command:
 ```sql
 SELECT DATABASE();
@@ -41,7 +41,7 @@ Explanation: This command returns the name of the currently selected database.
 
 
 
-# Creating Tables in SQL
+## Creating Tables in SQL
 
 ## What is a Table?
 A table is a collection of related data entries that consists of rows and columns. Each row represents a record, and each column represents an attribute of the data.
