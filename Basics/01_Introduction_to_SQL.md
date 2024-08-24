@@ -39,4 +39,4 @@ In the next section, you’ll learn how to create tables in SQL using the `CREAT
 
 ---
 
-Continue to the next lesson: **[Creating Tables in SQL](../02_Creating_Tables/creating_table.md)**.
+Continue to the next lesson: **[Creating Tables in SQL](Basics/02_Creating_Tables/creating_table.md)**.
