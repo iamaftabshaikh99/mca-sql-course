@@ -1,3 +1,46 @@
+# Creating and Managing Databases
+
+## Creating a Database
+Before creating tables, you need to have a database where these tables will reside. A database is a collection of related data that is organized for easy access, management, and updating.
+
+To create a new database, use the `CREATE DATABASE` statement. Here is the syntax:
+
+```sql
+CREATE DATABASE database_name;
+```
+
+# Example: Creating a New Database
+```sql
+CREATE DATABASE school;
+```
+Explanation: This command creates a new database named school.
+
+
+# Listing Existing Databases
+Once you've created a database, you may want to see a list of all existing databases on your server. You can do this using the `SHOW DATABASES` statement:
+
+```sql
+SHOW DATABASES;
+```
+Explanation: This command lists all databases that are currently available on your server.
+
+# Selecting a Database
+Before creating tables, you need to select the database where the tables will be created. You can select a database using the `USE` command:
+
+```sql
+USE school;
+```
+Explanation: This command selects the school database, making it the active database for all subsequent operations.
+
+# Displaying the Selected Database
+To confirm that you are working in the correct database, you can use the `SELECT DATABASE();` command:
+```sql
+SELECT DATABASE();
+```
+Explanation: This command returns the name of the currently selected database.
+
+
+
 # Creating Tables in SQL
 
 ## What is a Table?
