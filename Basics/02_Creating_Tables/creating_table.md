@@ -93,6 +93,14 @@ CREATE TABLE courses (
 
 **Explanation**: The `courses` table contains details about different courses. The `course_id` uniquely identifies each course, and `course_name` stores the name of the course.
 
+**Expected Output**:
+After running `DESCRIBE courses;` or `SHOW COLUMNS FROM courses;`, you should see:
+
+| Field       | Type         | Null | Key | Default | Extra          |
+|-------------|--------------|------|-----|---------|----------------|
+| course_id   | INT          | NO   | PRI | NULL    | auto_increment |
+| course_name | VARCHAR(100) | YES  |     | NULL    |                |
+
 ### Example: Creating an Enrollments Table
 Finally, let's create an `enrollments` table:
 
@@ -108,6 +116,16 @@ CREATE TABLE enrollments (
 ```
 
 **Explanation**: The `enrollments` table tracks which students are enrolled in which courses. It includes `student_id` and `course_id` as foreign keys that reference the `students` and `courses` tables, respectively, establishing a relationship between the tables.
+
+**Expected Output**:
+After running `DESCRIBE enrollments;` or `SHOW COLUMNS FROM enrollments;`, you should see:
+
+| Field           | Type | Null | Key | Default | Extra          |
+|-----------------|------|------|-----|---------|----------------|
+| enrollment_id   | INT  | NO   | PRI | NULL    | auto_increment |
+| student_id      | INT  | YES  | MUL | NULL    |                |
+| course_id       | INT  | YES  | MUL | NULL    |                |
+| enrollment_date | DATE | YES  |     | NULL    |                |
 
 ## Practice
 Refer to the `examples/` directory for SQL scripts to create these tables and populate them with data.
@@ -152,3 +170,4 @@ CREATE TABLE enrollments (
 ---
 
 Continue to the next lesson: **[Inserting Data into Tables](../03_Inserting_Data/inserting_data.md)**.
+```
