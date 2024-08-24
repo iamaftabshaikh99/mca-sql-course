@@ -1,6 +1,3 @@
-### **02_Creating_Tables/creating_tables.md**
-
-```markdown
 # Creating Tables in SQL
 
 ## What is a Table?
